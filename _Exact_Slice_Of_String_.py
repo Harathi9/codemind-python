@@ -1,0 +1,5 @@
+r=input()
+v=int(input())
+k=int(input())
+i=slice(v,k+1)
+print(r[i])
