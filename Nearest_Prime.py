@@ -1,29 +1,30 @@
-t=int(input())
-while t:
-    a=int(input())
-    temp=a
-    while True:
-        for i in range(2,int(a**0.5)+1):
-            if(a%i==0):
-                break
-        else:
-            np=a
+def is_prime(j):
+    i=2
+    v=0
+    while i!=j:
+        if j%i==0:
+            v=1
+        i+=1
+    if v==0:
+        return j
+
+
+x = int(input())
+for i in range(x):
+    y = int(input())
+    b=y
+    for j in range(y,2-1,-1):
+        if is_prime(j):
+            n=j
             break
-        a+=1
-    a=temp
-    while a:
-        for i in range(2,int(a**0.5)+1):
-            if(a%i==0):
-                break
-        else:
-            pp=a
+    while b!=0:
+        if is_prime(b):
+            m=b
             break
-        a-=1
-    a=temp
-    if(abs(np-a)<abs(pp-a)):
-        print(np)
-    elif(abs(np-a)>abs(pp-a)):
-        print(pp)
+        b+=1
+    if (y-n)<(m-y):
+        print(n)
+    elif (y-n)==(m-y):
+        print(n)
     else:
-        print(pp)
-    t-=1
+        print(m)
